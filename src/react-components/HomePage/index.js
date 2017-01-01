@@ -49,6 +49,24 @@ class HomePage extends React.Component {
             }
           </section>
         </section>
+
+        <header>
+          <img src="/img/banner.jpeg" width="100%" />
+        </header>
+
+        <section>
+          <section className="container">
+            {
+              this.props.products
+              ?
+              <ProductList productList={this.props.products}/>
+              :
+              null
+            }
+          </section>
+        </section>
+
+
       </section>
     );
   }

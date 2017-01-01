@@ -5,9 +5,10 @@ import {decorate, bind} from 'alt-utils/lib/decorators';
 @decorate(alt)
 class ProductStore {
   constructor() {
-    this.state = {user: null,
-      products: []
-
+    this.state = {
+      user: null,
+      products: [],
+      comments: []
     };
   }
 
@@ -16,9 +17,14 @@ class ProductStore {
     this.setState({user: user});
   }
 
-@bind(Actions.getProducts)
+  @bind(Actions.getProducts)
   getProducts(products) {
-  this.setState({products:products});
+    this.setState({products: products});
+  }
+
+  @bind(Actions.getComments)
+  getComments(comments) {
+    this.setState({comments: comments})
   }
 }
 
